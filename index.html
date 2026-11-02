@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de Clima</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <header>
+    <h1>Previsão do Tempo</h1>
+    <button id="theme-toggle-btn" class="theme-btn" aria-label="Alternar modo noturno">🌙</button>
+</header>
+
+    <!-- Conteúdo principal da aplicação -->
+    <main>
+        <!-- Seção dedicada ao formulário de busca de cidades -->
+       <section class="search-section" aria-label="Busca de Cidades">
+    <div class="search-box">
+        <!-- Autocomplete="off" para o navegador não atrapalhar a lista personalizada -->
+        <input type="text" id="city-input" placeholder="Digite a cidade ou CEP..." autocomplete="off">
+        <button id="search-btn">Buscar</button>
+    </div>
+    <!-- Lista suspensa onde aparecerão as sugestões de cidades -->
+    <ul id="suggestions-list" class="suggestions-list hidden"></ul>
+</section>
+
+        <!-- Seção dedicada a exibir os resultados do clima (inicia escondida) -->
+<section id="weather-card" class="weather-card hidden" aria-label="Resultado da Previsão">
+    <h2 id="city-name">--</h2>
+    
+    <!-- Novo elemento para o ícone do clima -->
+    <img id="weather-icon" src="" alt="Ícone do Clima" class="weather-icon hidden">
+    
+    <p id="temp">--°C</p>
+    <p id="description">--</p>
+    
+    <div class="temp-details">
+        <p>Sensação: <span id="feels-like">--</span>°C</p>
+        <p>Máx: <span id="temp-max">--</span>°C / Mín: <span id="temp-min">--</span>°C</p>
+    </div>
+
+    <div class="details">
+        <p>Umidade: <span id="humidity">--</span>%</p>
+        <p>Vento: <span id="wind">--</span> km/h</p>
+    </div>
+</section>
+
+        <!-- Mensagem de erro caso a cidade não seja encontrada (inicia escondida) -->
+        <p id="error-message" class="error hidden" role="alert">Cidade não encontrada. Tente novamente.</p>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <p>&copy; 2026 - Desenvolvido por Julia Figueiredo</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
